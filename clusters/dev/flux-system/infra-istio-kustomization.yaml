@@ -15,6 +15,7 @@ spec:
     - name: infra-networking
     - name: infra-networking-config
   healthChecks:
-    - kind: HelmRelease
+    - apiVersion: helm.toolkit.fluxcd.io/v2
+      kind: HelmRelease
       name: istio-ingressgateway
       namespace: istio-system
