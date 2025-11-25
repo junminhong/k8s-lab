@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infra-istio
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ../../infrastructure/networking/istio/overlays/dev
+  prune: true
+  targetNamespace: istio-system
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  dependsOn:
+    - name: infra-networking
+    - name: infra-networking-config
+  healthChecks:
+    - kind: HelmRelease
+      name: istio-ingressgateway
+      namespace: istio-system

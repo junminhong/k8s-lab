@@ -6,3 +6,4 @@ resources:
 - infra-monitoring-kustomization.yaml
 - infra-networking-kustomization.yaml
 - infra-networking-config-kustomization.yaml
+- infra-istio-kustomization.yaml
