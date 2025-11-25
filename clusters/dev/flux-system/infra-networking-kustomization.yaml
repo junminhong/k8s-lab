@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m0s
-  path: ../../infrastructure/networking/overlays/dev
+  path: ../../infrastructure/networking/metallb/overlays/dev
   prune: true
   targetNamespace: metallb-system
   healthChecks:

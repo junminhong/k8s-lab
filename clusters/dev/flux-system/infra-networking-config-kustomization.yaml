@@ -7,7 +7,7 @@ spec:
   dependsOn:
     - name: infra-networking
   interval: 5m0s
-  path: ../../infrastructure/networking/overlays/dev/config
+  path: ../../infrastructure/networking/metallb/overlays/dev/config
   prune: true
   targetNamespace: metallb-system
   sourceRef:
