@@ -5,3 +5,4 @@ resources:
 - gotk-sync.yaml
 - infra-monitoring-kustomization.yaml
 - infra-networking-kustomization.yaml
+- infra-networking-config-kustomization.yaml

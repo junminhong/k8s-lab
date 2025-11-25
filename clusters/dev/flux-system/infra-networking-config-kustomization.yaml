@@ -1,0 +1,15 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infra-networking-config
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-networking
+  interval: 5m0s
+  path: ../../infrastructure/networking/overlays/dev/config
+  prune: true
+  targetNamespace: metallb-system
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
