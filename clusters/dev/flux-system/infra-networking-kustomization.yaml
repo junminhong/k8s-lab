@@ -8,6 +8,10 @@ spec:
   path: ../../infrastructure/networking/overlays/dev
   prune: true
   targetNamespace: metallb-system
+  healthChecks:
+    - kind: HelmRelease
+      name: metallb
+      namespace: metallb-system
   sourceRef:
     kind: GitRepository
     name: flux-system
