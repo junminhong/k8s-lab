@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: fastapi
+  labels:
+    istio-injection: enabled  # 啟用 Istio sidecar 自動注入

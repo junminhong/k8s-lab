@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: fastapi-gw
+  namespace: fastapi
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - fastapi.local
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: fastapi
+  namespace: fastapi
+spec:
+  hosts:
+    - fastapi.local
+  gateways:
+    - fastapi-gw
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: fastapi.fastapi.svc.cluster.local
+            port:
+              number: 80

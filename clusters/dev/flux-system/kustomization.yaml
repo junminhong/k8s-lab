@@ -7,3 +7,4 @@ resources:
 - infra-networking-kustomization.yaml
 - infra-networking-config-kustomization.yaml
 - infra-istio-kustomization.yaml
+- apps-fastapi-kustomization.yaml

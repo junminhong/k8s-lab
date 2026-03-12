@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-fastapi
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ../../apps/fastapi/overlays/dev
+  prune: true
+  targetNamespace: fastapi
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
